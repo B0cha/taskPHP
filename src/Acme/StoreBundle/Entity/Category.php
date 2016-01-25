@@ -2,6 +2,8 @@
 
 namespace Acme\StoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 class Category
 {
 	protected $id;
