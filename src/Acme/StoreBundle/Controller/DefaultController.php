@@ -4,7 +4,6 @@ namespace Acme\StoreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Acme\StoreBundle\Entity\Category;
@@ -37,7 +36,14 @@ class DefaultController extends Controller
     * @Method("GET")
     */
     public function showProductsCategoryAction(Category $category)
-    {
-    	
+    {	
+    	$em = $this->getDoctrine()->getManager();
+    	$categories = $em->getRepository('AcmeStoreBundle:Category')->findAll();
+    	$products = $em->getRepository('AcmeStoreBundle:Product')->findByCategory($category);
+    	return $this->render('site/home.html.twig', array(
+            'category' => $category,
+            'categories' => $categories,
+            'products' => $products
+        ));
     }
 }

@@ -5,10 +5,11 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <a href="/site.com">Home</a>
     </head>
     <body>
         <div>
-            {% block category %}{% endblock %}
+            {% block all_categories %}{% endblock %}
         </div>
         <hr></hr>
         <div>

@@ -12,7 +12,7 @@ use Acme\StoreBundle\Form\ProductType;
 /**
  * Product controller.
  *
- * @Route("/product")
+ * @Route("site.com/product")
  */
 class ProductController extends Controller
 {

@@ -12,7 +12,7 @@ use Acme\StoreBundle\Form\CategoryType;
 /**
  * Category controller.
  *
- * @Route("/category")
+ * @Route("site.com/category")
  */
 class CategoryController extends Controller
 {
