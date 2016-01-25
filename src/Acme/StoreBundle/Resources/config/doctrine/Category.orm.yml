@@ -9,3 +9,7 @@ Acme\StoreBundle\Entity\Category:
         name:
             type: string
             length: 30
+    oneToMany:
+        products:
+            targetEntity: Product
+            mappedBy: category

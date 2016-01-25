@@ -42,4 +42,9 @@ class Product
     {
         return $this->name;
     }
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
 }
