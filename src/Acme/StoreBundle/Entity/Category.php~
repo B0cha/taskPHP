@@ -8,6 +8,13 @@ class Category
 
 	protected $name;
 
+	protected $products;
+
+	public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
     /**
      * Get id
      *
