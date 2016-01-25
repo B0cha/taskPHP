@@ -9,6 +9,8 @@ class Product
 
 	protected $name;
 
+    protected $category;
+
     /**
      * Get id
      *
@@ -47,10 +49,6 @@ class Product
     {
         $this->products = new ArrayCollection();
     }
-    /**
-     * @var \Acme\StoreBundle\Entity\Category
-     */
-    private $category;
 
 
     /**
