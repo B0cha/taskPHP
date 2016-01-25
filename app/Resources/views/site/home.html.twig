@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block category %}
+    <h2>Categories</h2>   
+    <ul>
+    {% for category in categories %}
+        <li>
+            <a href="{{ path('site_category_name', { 'id':category.id })}}">{{ category.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+{% block product %}
+    <h2>All products</h2>
+    {% for product in products %}
+        <li>{{product.name}}</li>
+    {% endfor %}
+{% endblock %}

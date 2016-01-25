@@ -7,6 +7,13 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <div>
+            {% block category %}{% endblock %}
+        </div>
+        <hr></hr>
+        <div>
+            {% block product %}{% endblock %}
+        </div>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
