@@ -6,13 +6,13 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 class Category
 {
-	protected $id;
+    protected $id;
 
-	protected $name;
+    protected $name;
 
-	protected $products;
+    protected $products;
 
-	public function __construct()
+    public function __construct()
     {
         $this->products = new ArrayCollection();
     }
@@ -85,7 +85,7 @@ class Category
         return $this->products;
     }
 
-    public function __toString() 
+    public function __toString()
     {
         return $this->name;
     }

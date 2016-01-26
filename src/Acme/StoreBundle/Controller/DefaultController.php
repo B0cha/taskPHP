@@ -9,38 +9,35 @@ use Symfony\Component\HttpFoundation\Request;
 use Acme\StoreBundle\Entity\Category;
 use Acme\StoreBundle\Entity\Product;
 
-
 /**
 * @Route("/site.com")
 */
 class DefaultController extends Controller
-{	
-	/**
-	* @Route("/", name="home")
-	*/
+{
+    /**
+    * @Route("/", name="home")
+    */
     public function indexAction()
-    {	
-    	$em = $this->getDoctrine()->getManager();
-
+    {
+        $em = $this->getDoctrine()->getManager();
         $categories = $em->getRepository('AcmeStoreBundle:Category')->findAll();
         $products = $em->getRepository('AcmeStoreBundle:Product')->findAll();
         return $this->render('site/home.html.twig', array(
             'categories' => $categories,
             'products' => $products
         ));
-        //return $this->render('site/home.html.twig');
     }
-
     /**
     * @Route("/{id}", name="site_category_name")
     * @Method("GET")
     */
     public function showProductsCategoryAction(Category $category)
-    {	
-    	$em = $this->getDoctrine()->getManager();
-    	$categories = $em->getRepository('AcmeStoreBundle:Category')->findAll();
-    	$products = $em->getRepository('AcmeStoreBundle:Product')->findByCategory($category);
-    	return $this->render('site/home.html.twig', array(
+    {
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository('AcmeStoreBundle:Category')->findAll();
+        $products = $em->getRepository('AcmeStoreBundle:Product')
+                    ->findByCategory($category);
+        return $this->render('site/home.html.twig', array(
             'category' => $category,
             'categories' => $categories,
             'products' => $products

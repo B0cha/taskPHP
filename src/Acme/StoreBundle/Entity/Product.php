@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Product
 {
 
-	protected $id;
+    protected $id;
 
-	protected $name;
+    protected $name;
 
     protected $category;
 
